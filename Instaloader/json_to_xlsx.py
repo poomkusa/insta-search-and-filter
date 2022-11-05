@@ -11,10 +11,10 @@ import pandas as pd
 
 df = pd.DataFrame(columns=['caption', 'url'])
 
-for filename in os.listdir('/home/poom/Desktop/insta/#<KEYWORD>'):
+for filename in os.listdir('/home/poom/Desktop/insta/<KEYWORD>'):
     if '.jpg' in filename:
         continue
-    file = os.path.join("/home/poom/Desktop/insta/#<KEYWORD>", filename)
+    file = os.path.join("/home/poom/Desktop/insta/<KEYWORD>", filename)
     with open(file) as f:
         contents = f.read()
     caption = contents.split('new_tab')[0]
@@ -22,10 +22,10 @@ for filename in os.listdir('/home/poom/Desktop/insta/#<KEYWORD>'):
     temp = pd.DataFrame([[caption, url]], columns=['caption', 'url'])
     df = pd.concat([df, temp])
     
-for filename in os.listdir('/home/poom/Desktop/insta/#<KEYWORD>'):
+for filename in os.listdir('/home/poom/Desktop/insta/<KEYWORD>'):
     if '.jpg' in filename:
         continue
-    file = os.path.join("/home/poom/Desktop/insta/#<KEYWORD>", filename)
+    file = os.path.join("/home/poom/Desktop/insta/<KEYWORD>", filename)
     with open(file) as f:
         contents = f.read()
     caption = contents.split('new_tab')[0]
